@@ -101,11 +101,10 @@ def gen_frames():
 
 
 
-with open('config.json', 'r') as c:
-    params = json.load(c)["params"]
+upload_location = './Images'
 
 app.secret_key = 'super-secret-key'
-app.config['UPLOAD_FOLDER'] = params['upload_location']
+app.config['UPLOAD_FOLDER'] = upload_location
 
 @app.route('/uploader', methods=['GET', 'POST'])
 def uploader():
